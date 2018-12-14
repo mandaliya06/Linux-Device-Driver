@@ -1,0 +1,36 @@
+
+Output : ****************************************************************
+	
+1.	Hello_World.c  Hello_World.ko  Hello_World.mod.c  Hello_World.mod.o  Hello_World.o  Makefile  modules.order  Module.symvers  README.md
+	 *
+	 ***************************************************************
+2.Insert module : 
+	sudo insmod Hello_World.ko
+   See the output :
+	dmesg 
+
+output : ****************************************************************
+	 *
+	[ 7012.654357] Hello World module inserted...
+	[ 7012.654361] File : /home/ajit/kishan/Linux_Device_Driver/Session_1/Hello_World.c, function : Hello_World_init, line : 53
+	 *
+	 ***************************************************************
+3. See the modules that get inserted:
+	cat /proc/modules | grep Hello_World
+
+output : **************************************************************
+	 *  Hello_World 16384 0 - Live 0x0000000000000000 (OE)
+	 **************************************************************
+
+4. Remove module
+	sudo rmmod hello
+   See the output :
+	dmesg 
+
+output : **************************************************************
+	 *
+	[ 8746.133307] Hello world module removed...
+	[ 8746.133310] File : /home/ajit/kishan/Linux_Device_Driver/Session_1/Hello_World.c, function : Hello_World_exit, line : 66
+	 *
+	 **************************************************************
+
