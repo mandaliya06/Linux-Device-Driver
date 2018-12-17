@@ -1,0 +1,62 @@
+
+Output : ****************************************************************
+	
+1.	Hello_World.c  Hello_World.ko  Hello_World.mod.c  Hello_World.mod.o  Hello_World.o  Makefile  modules.order  Module.symvers  README.md
+	 *
+	 ***************************************************************
+2.Insert module : 
+	sudo insmod Hello_World.ko val=10 name="Spanidea" arr_val=10,11,12,13
+   See the output :
+	dmesg | tail -10
+
+output : ****************************************************************
+	 *
+	[31573.184386] val = 12 
+	[31573.184390] cb_val = 0 
+	[31573.184393] name = Spanidea 
+	[31573.184396] arr_val[0] = 0
+	[31573.184399] arr_val[1] = 0
+	[31573.184401] arr_val[2] = 0
+	[31573.184404] arr_val[3] = 0
+	[31573.184407] Hello World module inserted...
+	[31573.184410] File : /home/ajit/kishan/Linux_Device_Driver/Session_2/Hello_World.c, function : Hello_World_init, line : 99
+	 *
+	 ***************************************************************
+3. See the modules that get inserted:
+	cat /proc/modules | grep Hello_World
+
+output : **************************************************************
+	 *  Hello_World 16384 0 - Live 0x0000000000000000 (OE)
+	 **************************************************************
+4.  check module_param_cb() is weather calling that handler function or not. For that i need to change the variable in sysfs.
+	echo 13 > /sys/module/Hello_World/parameters/cb_val 
+	dmesg
+output : ****************************************************************
+         *
+	[31573.184386] val = 12 
+	[31573.184390] cb_val = 0 
+	[31573.184393] name = Spanidea 
+	[31573.184396] arr_val[0] = 0
+	[31573.184399] arr_val[1] = 0
+	[31573.184401] arr_val[2] = 0
+	[31573.184404] arr_val[3] = 0
+	[31573.184407] Hello World module inserted...
+	[31573.184410] File : /home/ajit/kishan/Linux_Device_Driver/Session_2/Hello_World.c, function : Hello_World_init, line : 99
+	[32090.165015] Call back function called...
+	[32090.165030] New value of cb_val = 17
+
+         *
+         ***************************************************************
+
+4. Remove module
+	sudo rmmod Hello_World
+   See the output :
+	dmesg 
+
+output : **************************************************************
+	 *
+	[32264.003995] Hello world module removed...
+	[32264.004006] File : /home/ajit/kishan/Linux_Device_Driver/Session_2/Hello_World.c, function : Hello_World_exit, line : 112
+	 *
+	 **************************************************************
+
