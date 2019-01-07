@@ -1,17 +1,18 @@
-/************************************************************************************************
+/****************************************************************************
 @fileName : Hello_world.c
 @author   : Kishan Mandaliya 
 @teamLead : Rajesh Dommaraju 
 @details  : It is a simple HelloWorld driver to load a module in the kernel  
 @license  : SpanIdea Systems Pvt. Ltd. All rights reserved.
-************************************************************************************************/
+******************************************************************************/
 
-/*******************************************************************************
+/******************************************************************************
                         INCLUDES
-*******************************************************************************/
+******************************************************************************/
 
 #include <linux/init.h>
 #include <linux/module.h>
+#include <linux/kernel.h>
 
 /*******************************************************************************
                          LOCAL MACROS           
@@ -37,33 +38,33 @@
 /*******************************************************************************
                         LOCAL FUNCTIONS         
 *******************************************************************************/
-static int Hello_World_init(void);
-static void Hello_World_exit(void);
+static int __init Hello_World_init(void);
+static void __exit Hello_World_exit(void);
 
 
-/**********************************************************************************************
+/********************************************************************************
 function         : Hello_World_init
 description      : This function is initialised when module gets inserted.
                    This function is passed as an argument to module_init.
 input param      : NONE
 output param     : NONE
-**********************************************************************************************/
+*********************************************************************************/
 static int __init Hello_World_init(void) {
     printk(KERN_INFO "Hello World module inserted...\n");
     printk(KERN_DEBUG "File : %s, function : %s, line : %d\n", __FILE__, __func__, __LINE__);
     return 0;
 }
 
-/**********************************************************************************************
+/*********************************************************************************
 function         : Hello_World_exit
 description      : This function is initialised when module gets removed.
                    This function is passed as an argument to module_exit.
 input param      : NONE
 output param     : NONE
-**********************************************************************************************/
+***********************************************************************************/
 static void __exit Hello_World_exit(void) {
-    printk("Hello world module removed...\n");
-    printk("File : %s, function : %s, line : %d\n", __FILE__, __func__, __LINE__);
+    printk(KERN_INFO "Hello world module removed...\n");
+    printk(KERN_DEBUG "File : %s, function : %s, line : %d\n", __FILE__, __func__, __LINE__);
 }
 
 module_init(Hello_World_init);

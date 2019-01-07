@@ -1,40 +1,34 @@
 
-@Date : 17/12/2018
+@Date : 3/1/2019
 @Name : Kishan Mandaliya
 
 /*********************************************************************************************/
 					Session-2
 
 /*********************************************************************************************/
-1.Passing Arguments to Device Driver
+1. Make one function available to other modules by using Export_symbol  
 
-File : Hello_World.c
+
+File : Module_1.c Module_2.c
 Description :
-                This file is a simple Hello World module and Passing Arguments to Device Driver.
-                Contains basic module_init and module_exit functions.
+                This file is for how to make our functions available to other modules
 
 Steps to compile LKM :
 1.Run                           make
-2.Insert module                 sudo insmod Hello_World.ko val=10 name="Spanidea" arr_val=10,11,12,13
-3.See the added module          cat /proc/modules | grep Hello_World
-4.See the logs in dmesg         dmesg | tail -10
+2.Insert module                 sudo insmod Module_1.ko
+				sudo insmod Module_2.ko
+3.See the logs in dmesg         dmesg | tail 
   kernel ring buffer
-5.Now i’m going to check 
-module_param_cb() is weather	echo 15 > /sys/module/Hello_World/parameters/cb_val  
-calling that handler function 
-or not. For that i need to 
-change the variable in sysfs.
+4.Remove module                 sudo rmmod Module_1
+				sudo rmmod Module_2
 
-6.Remove module                 sudo rmmod Hello_World
-7.Run                           make clean
+5.Run                           make clean
 
 
 Keypoints to remember:
-1.static int Hello_World_init();
+1.int Hello_World_init();
 2.void Hello_World_exit();
 3.module_init();
 4.module_exit();
-5.module_param()
-6.module_param_array()
-7.module_param_cb() // cb mean callback
+5.EXPORT_SYMBOL() helps you provide APIs to other modules/code.
 

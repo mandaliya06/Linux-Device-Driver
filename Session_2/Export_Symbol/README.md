@@ -17,19 +17,18 @@ Steps to compile LKM :
 1.Run                           make
 2.Insert module                 sudo insmod Hello_World.ko
 3.See the added module          cat /proc/modules | grep Hello_World
-4.See the logs in dmesg         dmesg | tail 
+4.See the logs in dmesg         dmesg | tail -10
   kernel ring buffer
 5.Remove module                 sudo rmmod Hello_World
 6.Run                           make clean
 
 
 Keypoints to remember:
-1.int Hello_World_init();
+1.static int Hello_World_init();
 2.void Hello_World_exit();
 3.module_init();
 4.module_exit();
-5.In Makefile name should be start with capital latter M (E.g Makefile)
-
-
+5.In Makefile name shuold be start with capital latter M (E.g Makefile)
+6.Using Command dmesg you can see print on system console
 
 

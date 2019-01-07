@@ -42,14 +42,13 @@ int  cb_val = 0;
 static int Hello_World_init(void);
 static void Hello_World_exit(void);
 
-module_param(val,int,S_IRUSR|S_IWUSR);               //integer value
-module_param(name,charp,S_IRUSR|S_IWUSR);            //String
+module_param(val,int,S_IRUSR|S_IWUSR);                //integer value
+module_param(name,charp,S_IRUSR|S_IWUSR);             //String
 module_param_array(arr_val,int,NULL,S_IRUSR|S_IWUSR); //Array of integers
 
 /**********************************************************************************************
 function         : notify_param
-description      : This function is notify when variable would be changed.
-            
+description      : This function is notify when variable would be changed.            
 input param      : integer value
 output param     : On success 0 else -1
 **********************************************************************************************/

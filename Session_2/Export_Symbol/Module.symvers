@@ -1,0 +1,3 @@
+0xf68966ba	print_hello	/home/kishan/main_device_driver/Linux-Device-Driver/Session_2/Export_Symbol/Module_1	EXPORT_SYMBOL
+0x499da85c	My_var	/home/kishan/main_device_driver/Linux-Device-Driver/Session_2/Export_Symbol/Module_1	EXPORT_SYMBOL
+0x61b2c2d1	str	/home/kishan/main_device_driver/Linux-Device-Driver/Session_2/Export_Symbol/Module_1	EXPORT_SYMBOL

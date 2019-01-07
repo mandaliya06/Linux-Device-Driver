@@ -1,0 +1,40 @@
+
+Output : ****************************************************************
+	
+1.	Module_1.c Module_2.c  Module_1.ko Module_2.ko  Module_1.mod.c Module_2.mod.c  Module_1.mod.o Module_2.mod.o  Module_1.o Module_2.o  Makefile  modules.order  Module.symvers  README.md
+	 *
+	 ***************************************************************
+2.Insert module : 
+	sudo insmod Module_1.ko
+	sudo insmod Module_2.ko
+   See the output :
+	dmesg 
+
+output : ****************************************************************
+	 *
+	[22368.861142] Hello from 1st module...
+	[22374.237227] Hello from 2nd Module...
+	[22374.237237] from 1st Module : Hello friend
+	[22374.237242] from 1st Module : Hello friend
+	[22374.237247] from 1st Module : Hello friend
+	[22374.237251] from 1st Module : Hello friend
+	[22374.237255] from 1st Module : Hello friend
+	[22374.237261] value of My_var = 100
+	[22374.237266] name  = Spanidea
+	
+	 *
+	 ***************************************************************
+3. Remove module
+	sudo rmmod Module_2
+	sudo rmmod Module_1
+   See the output :
+	dmesg 
+
+output : **************************************************************
+	 *
+	[22546.621131] Bye!!! from 2nd Module...
+	[22548.905441] Bye!!! from 1st Module...
+	
+	 *
+	 **************************************************************
+

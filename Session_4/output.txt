@@ -1,0 +1,34 @@
+
+Output : ****************************************************************
+	
+1.	Hello_World.c  Hello_World.ko  Hello_World.mod.c  Hello_World.mod.o  Hello_World.o  Makefile  modules.order  Module.symvers  README.md
+	 *
+	 ***************************************************************
+2.Inseart module :
+	sudo insmod Hello_World.ko
+   See the output : Statically Allocating Major Number
+	cat /proc/devices | grep "Spanidea"
+	
+output : Statically allocated ******************************************
+	 *
+	235 Spanidea
+	 *
+	 ***************************************************************
+output : Dynamically allocated ******************************************
+	 *
+	244 Spanidea
+	 *
+	 ***************************************************************
+
+3. Remove module
+	sudo rmmod hello
+   See the output :
+	dmesg 
+
+output : **************************************************************
+	 *
+	[ 5761.568363] Kernel Madule Removed Successfully...
+	[ 5761.568368] File : /home/kishan/main_device_driver/Linux-Device-Driver/Session_3/Hello_World.c, function : Hello_World_exit, line : 74
+
+	 *
+	 **************************************************************	

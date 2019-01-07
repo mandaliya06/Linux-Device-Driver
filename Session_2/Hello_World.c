@@ -42,8 +42,8 @@ int  cb_val = 0;
 static int Hello_World_init(void);
 static void Hello_World_exit(void);
 
-module_param(val,int,S_IRUSR|S_IWUSR);               //integer value
-module_param(name,charp,S_IRUSR|S_IWUSR);            //String
+module_param(val,int,S_IRUSR|S_IWUSR);                //integer value
+module_param(name,charp,S_IRUSR|S_IWUSR);             //String
 module_param_array(arr_val,int,NULL,S_IRUSR|S_IWUSR); //Array of integers
 
 /**********************************************************************************************
@@ -67,8 +67,8 @@ int notify_param(const char *val,const struct kernel_param *kp)
 
 const struct kernel_param_ops my_param_ops =
 {
-	.set = &notify_param,  // Use our setter ...
-	.get = &param_get_int, // .. and standard getter
+	.set = &notify_param,  
+	.get = &param_get_int, 
 };
 /**********************************************************************************************
 function         : module_param_cb
