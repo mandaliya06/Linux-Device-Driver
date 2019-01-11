@@ -1,0 +1,1 @@
+cmd_/home/kishan/main_device_driver/Linux-Device-Driver/Session_7/My_SysFs.ko := ld -r -m elf_i386 -T ./scripts/module-common.lds --build-id  -o /home/kishan/main_device_driver/Linux-Device-Driver/Session_7/My_SysFs.ko /home/kishan/main_device_driver/Linux-Device-Driver/Session_7/My_SysFs.o /home/kishan/main_device_driver/Linux-Device-Driver/Session_7/My_SysFs.mod.o

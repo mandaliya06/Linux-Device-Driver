@@ -1,0 +1,25 @@
+
+Output : ****************************************************************
+	
+1.	My_SysFs.c  	My_SysFs.ko  	My_SysFs.mod.c  My_SysFs.o  Makefile  modules.order  Module.symvers  README.md
+	 *
+	 ***************************************************************
+2.Inseart module :
+	sudo insmod My_SysFs.ko
+	
+output : ******************************************
+	 *
+	 cat /sys/kernel/My_SysFs/My_value
+	
+         0
+	
+	 ***************************************************************
+	 echo 1234 > /Sys/kernel/My_SysFs/Myvalue
+	 
+	 cat  /Sys/kernel/My_SysFs/Myvalue
+
+	 1234	
+	 ***************************************************************
+3. Remove module
+	sudo rmmod My_SysFs
+
