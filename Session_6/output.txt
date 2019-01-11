@@ -1,0 +1,24 @@
+
+Output : ****************************************************************
+	
+1.	My_procFs.c  	My_procFs.ko  	My_procFs.mod.c  My_procFs.o  Makefile  modules.order  Module.symvers  README.md
+	 *
+	 ***************************************************************
+2.Inseart module :
+	sudo insmod My_procFs.ko
+	
+output : ******************************************
+	 *
+	 cat /proc/My_proc
+	
+         My proc fs Entry 
+	
+	 ***************************************************************
+	 echo "Spanidea procFs" > /proc/My_proc
+	 cat /proc/My_proc
+	
+	 Spanidea procFs
+	 ***************************************************************
+3. Remove module
+	sudo rmmod My_ProcFs
+
