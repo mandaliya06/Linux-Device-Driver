@@ -21,8 +21,8 @@ MODULE_INFO(retpoline, "Y");
 static const struct modversion_info ____versions[]
 __used
 __attribute__((section("__versions"))) = {
-	{ 0xeadeda83, __VMLINUX_SYMBOL_STR(module_layout) },
-	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
+	{ 0xef894695, __VMLINUX_SYMBOL_STR(module_layout) },
+	{ 0x50eedeb8, __VMLINUX_SYMBOL_STR(printk) },
 };
 
 static const char __module_depends[]
@@ -31,4 +31,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "B907018678D23E8AF2CA028");
+MODULE_INFO(srcversion, "2C7F9B0AE62BFFFB2CF989E");

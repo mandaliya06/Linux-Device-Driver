@@ -1,4 +1,4 @@
-obj-m = Hello_World.o
+obj-m = My_INT.o My_INT_WQ.o My_Tasklet.o
 
 KDIR = /lib/modules/$(shell uname -r)/build
 
